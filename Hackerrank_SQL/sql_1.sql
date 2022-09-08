@@ -39,8 +39,21 @@ SELECT COUNT(CITY) - COUNT(DISTINCT(CITY)) FROM STATION;
 SELECT TOP 1 CITY, LEN(CITY) FROM STATION
 ORDER BY LEN(CITY),CITY;
 
+
 SELECT TOP 1 CITY, LEN(CITY) FROM STATION
 ORDER BY LEN(CITY) DESC ,CITY;
+
+
+--SQL 11
+--Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+SELECT CITY FROM STATION
+WHERE SUBSTRING(CITY,1,1) IN ('A','E','I','O','U')
+--NOTE : SUBSTRING(string, start, length)
+
+--SQL 12
+--Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+SELECT DISTINCT CITY FROM STATION
+WHERE SUBSTRING(REVERSE(CITY),1,1) IN ('A','E','I','O','U');
 
 
 
